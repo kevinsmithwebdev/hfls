@@ -1,5 +1,6 @@
 import './../styles/main.scss'
 import './../styles/header.scss'
+import './../styles/footer.scss'
 
 if (process.env.NODE_ENV !== 'production') {
   require('./../index.pug')

@@ -2,17 +2,21 @@
 @import 'colors';
 @import 'constants';
 
-.header {
+header {
+  flex: none;
+}
+
+.titlebar {
   font-family: "Times New Roman", Times, serif;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   background: linear-gradient(to bottom right, $header-BG-color1, $header-BG-color2);
   min-height: 200px;
   border-radius: $border-radius;
   margin-top: 5px;
   margin-bottom: 3px;
+  flex: none;
 }
 
 .title {
@@ -40,7 +44,7 @@
 .logo {
   grid-column: 4;
   grid-row: 1;
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: center;
 }
