@@ -1,1 +1,0 @@
-https://github.com/Technologeek/react-webpack-3-boilerplate
