@@ -1,20 +1,13 @@
-import React,{Component} from 'react'
+import React from 'react'
+
+import TextPage from '../../common/TextPage/TextPage'
 
 import './Home.css'
 
-class Home extends Component{
-  constructor() {
-    super()
-    this.state = {}
-  }
-
-  render(){
-    return(
-      <div id='Home'>
-        Welcome to Home
-      </div>
-    )
-  }
-}
+const Home = () => (
+  <div id='Home'>
+    <TextPage page='home' />
+  </div>
+)
 
 export default Home

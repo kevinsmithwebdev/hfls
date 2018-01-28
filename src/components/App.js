@@ -1,26 +1,42 @@
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import Home from './Home/Home'
 import Store from './Store/Store'
 import Blog from './Blog/Blog'
+import Extra from './Extra/Extra'
 import About from './About/About'
 import Contact from './Contact/Contact'
 import NotFound from './NotFound/NotFound'
 
 import Header from './Header/Header'
+import Footer from './Footer/Footer'
+
+import './App.css'
+
 const App = () => (
-  <div className={"body"}>
+
+  <div className="main-wrapper">
+
     <Header />
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/store' component={Store} />
-      <Route exact path='/blog' component={Blog} />
-      <Route exact path='/about' component={About} />
-      <Route exact path='/contact' component={Contact} />
-      <Route exact path='*' component={NotFound} />
-    </Switch>
+
+    <div className='page'>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/store' component={Store} />
+        <Route exact path='/blog' component={Blog} />
+        <Route exact path='/extra' component={Extra} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/contact' component={Contact} />
+        <Route exact path='*' component={NotFound} />
+      </Switch>
+
+    </div>
+
+    <Footer />
+
   </div>
 )
+
 
 export default App

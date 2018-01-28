@@ -1,0 +1,3 @@
+scale tilebar text
+
+fix color holes in tree logo

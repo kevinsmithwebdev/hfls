@@ -6,17 +6,17 @@
   display: grid
   grid-template-columns: repeat(4, 1fr)
   grid-auto-rows: minmax(100px, auto)
-  background: linear-gradient(to bottom right, $header-BG-color1, $header-BG-color2)
-  height: 200px
+  background: $BG-gradient
+  height: $title-bar-height
   border-radius: $border-radius
-  margin-top: 5px
-  margin-bottom: 3px
+  margin-top: $section-bumper-padding
+  margin-bottom: $section-bumper-padding
   flex: none
 
 .title
   color: $title-color1
   font-style: italic
-  font-size: 72px
+  font-size: $title-base-size
   grid-column: 1 / 4
   grid-row: 1
   margin: 0 auto
@@ -28,7 +28,7 @@
 .title .end
   color: $title-color2
   text-align: center
-  font-size: 96px
+  font-size: $title-base-size * 1.4
   margin-bottom: 10px
   margin-top: -10px
 
@@ -39,6 +39,7 @@
   justify-content: center
 
 .logo .logo-image
-  height: 195px
-  margin-top: 5px
+  max-height: $title-bar-height * .95
+  margin-top: $title-bar-height * .05
+  height: auto
   width: auto

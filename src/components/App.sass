@@ -1,0 +1,39 @@
+@import '../assets/styles/colors.sass'
+@import '../assets/styles/constants.sass'
+
+.main-wrapper
+  max-width: $body-max-width
+  margin: 5px auto
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+.page
+  background-color: $page-BG
+  flex: 1
+  margin: $section-bumper-padding 0
+  color: $page-color
+  border: 1px solid ($page-BG - #060606)
+  padding: $section-bumper-padding * 2
+  border-radius: $border-radius
+  min-height: $page-min-height
+
+body
+  -webkit-box-sizing: content-box
+  -moz-box-sizing: content-box
+  box-sizing: content-box
+  border: none
+  font: normal 100%/normal Arial, Helvetica, sans-serif
+  color: rgb(255, 255, 255)
+  -o-text-overflow: clip
+  text-overflow: clip
+  background: -webkit-linear-gradient(-25deg, $grid-color1 75%, $grid-color2 75%), -webkit-linear-gradient(-155deg, $grid-color1 75%, $grid-color2 75%), -webkit-linear-gradient(-25deg, $grid-color1 75%, $grid-color2 75%), -webkit-linear-gradient(-155deg, $grid-color1 75%, $grid-color2 75%), $grid-color3
+  background: -moz-linear-gradient(115deg, $grid-color1 75%, $grid-color2 75%), -moz-linear-gradient(245deg, $grid-color1 75%, $grid-color2 75%), -moz-linear-gradient(115deg, $grid-color1 75%, $grid-color2 75%), -moz-linear-gradient(245deg, $grid-color1 75%, $grid-color2 75%), $grid-color3
+  background: linear-gradient(115deg, $grid-color1 75%, $grid-color2 75%), linear-gradient(245deg, $grid-color1 75%, $grid-color2 75%), linear-gradient(115deg, $grid-color1 75%, $grid-color2 75%), linear-gradient(245deg, $grid-color1 75%, $grid-color2 75%), $grid-color3
+  background-position: 0 0, 0 0, 7px -15px, 7px -15px
+  -webkit-background-origin: padding-box
+  background-origin: padding-box
+  -webkit-background-clip: border-box
+  background-clip: border-box
+  -webkit-background-size: 15px 30px
+  background-size: 15px 30px

@@ -1,6 +1,6 @@
 {
   "name": "create-react-app-sass-redux-boiler",
-  "description": "Get started with Create React App Sass and Redux",  
+  "description": "Get started with Create React App Sass and Redux",
   "author": "Bilal Abdullah",
   "keywords": ["create", "react", "app", "sass", "scss", "redux", "router"],
   "homepage": "https://github.com/AhadCove/Create-React-App-Redux-SASS-Boilerplate",
@@ -13,8 +13,8 @@
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.0.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
