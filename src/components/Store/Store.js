@@ -7,8 +7,8 @@ import './Store.css'
 
 class Store extends React.Component {
 
-  constructor(store) {
-    super(store)
+  constructor(props) {
+    super(props)
     this.state = {
       books: null
     }

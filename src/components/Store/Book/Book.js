@@ -23,14 +23,26 @@ const Book = ({ title, subtitle, img, description, gradeLevel, price, link }) =>
       <div className="book-description">
         {description}
       </div>
+
       <div className="book-grade-level">
-        {gradeLevel}
+        <div className="book-grade-price-label">
+          Grade Level
+        </div>
+        <div className="book-grade-price-num">
+          {gradeLevel}
+        </div>
       </div>
+
       <div className="book-price">
-        {price}
+        <div className="book-grade-price-label">
+         Price
+        </div>
+        <div className="book-grade-price-num">
+          ${price.toFixed(2)}
+        </div>
       </div>
       <div className="book-link">
-        {link}
+        <a href={link}>Buy!</a>
       </div>
     </div>
   )

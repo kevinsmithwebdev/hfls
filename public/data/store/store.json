@@ -5,7 +5,7 @@
     "img": "book1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "gradeLevel": "1",
-    "price": 1.01,
+    "price": 1,
     "link": "http://www.google.com"
   },
   {
@@ -14,7 +14,7 @@
     "img": "book2.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "gradeLevel": "1",
-    "price": 2.02,
+    "price": 2.0,
     "link": "http://www.google.com"
   },
   {
@@ -22,7 +22,7 @@
     "img": "book1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "gradeLevel": "1",
-    "price": 3.03,
+    "price": 3.00,
     "link": "http://www.google.com"
   },
   {
