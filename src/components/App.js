@@ -17,7 +17,7 @@ import './App.css'
 const App = () => (
 
   <div className="main-wrapper">
-
+  
     <Header />
 
     <div className='page'>
