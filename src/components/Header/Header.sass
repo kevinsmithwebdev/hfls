@@ -1,3 +1,24 @@
-// @import '../../assets/styles/constants.sass'
-// header
-//   border: 1px solid red
+@import '../../assets/styles/colors.sass'
+@import '../../assets/styles/constants.sass'
+
+#Header
+  background: $BG-gradient
+
+.tabsRoot
+  color: $navbar-link
+  background: $BG-gradient
+
+.tabsIndicator
+  background: yellow
+
+.tabRoot
+  text-transform: 'initial'
+  min-width: 54
+  font-weight: bold
+  &:hover
+    color: yellow
+    opacity: 1
+  &$tabSelected
+    color: yellow
+  &:focus
+    color: yellow

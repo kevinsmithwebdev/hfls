@@ -1,20 +1,29 @@
 {
-  "name": "create-react-app-sass-redux-boiler",
-  "description": "Get started with Create React App Sass and Redux",
-  "author": "Bilal Abdullah",
-  "keywords": ["create", "react", "app", "sass", "scss", "redux", "router"],
-  "homepage": "https://github.com/AhadCove/Create-React-App-Redux-SASS-Boilerplate",
+  "name": "have-fun-learning-spanish",
+  "description": "Web site for Roxana Nunez's publishing of Spanish learning books.",
+  "author": "Kevin Smith",
+  "keywords": [
+    "spanish",
+    "spanish learning",
+    "book",
+    "children",
+    "teaching",
+    "grade school",
+    "elementary school"
+  ],
+  "homepage": "http://kevinsmithwebdev.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AhadCove/Create-React-App-Redux-SASS-Boilerplate"
+    "url": "https://github.com/kevinsmithwebdev/hfls"
   },
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.0.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.6",
     "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",

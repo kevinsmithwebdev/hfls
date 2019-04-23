@@ -15,14 +15,14 @@ class TextPage extends React.Component {
   componentWillMount() {
     const dataUrl = `${process.env.PUBLIC_URL}/data/${this.props.page}/${this.props.page}.json`
     const imgUrl = (img) => `${process.env.PUBLIC_URL}/data/images/page/${img}`
-
+    console.log('dataUrl', dataUrl);
     fetch(dataUrl, {
       headers : {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        }
      })
-    .then((response) => response.json() )
+    .then((response) => response.json())
     .then((pageData) => {
       let newPD = pageData.map((page) => ({
         text: page.text || '',
