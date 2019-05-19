@@ -3,5 +3,5 @@ export const routeArr = [
   'store',
   'about',
   'blog',
-  'contact'
-]
+  'contact',
+];

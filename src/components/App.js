@@ -15,9 +15,7 @@ import Footer from './Footer/Footer'
 import './App.css'
 
 const App = () => (
-
   <div className="main-wrapper">
-  
     <Header />
 
     <div className='page'>
@@ -30,11 +28,9 @@ const App = () => (
         <Route exact path='/contact' component={Contact} />
         <Route exact path='*' component={NotFound} />
       </Switch>
-
     </div>
 
     <Footer />
-
   </div>
 )
 

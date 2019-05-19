@@ -1,48 +1,25 @@
-import React from 'react'
+import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import Category from './Category/Category';
+import CategoryLinks from './CategoryLinks/CategoryLinks';
+import storeData from './store.data';
+import { toTrainCase } from '../../utilities/casing';
+import './Store.css'; 
 
-import Book from './Book/Book'
-import Loading from '../../common/Loading/Loading'
+const renderCategory = (c, idx) => <Category category={ c } key={ c.slug } idx={ idx } />;
 
-import './Store.css'
+const Store = () => {
+  const newStoreData = storeData.map(c => ({ ...c, slug: `store-category-${toTrainCase(c.name)}` }));
+  
+  return (
+    <div>
+      <Typography gutterBottom variant='h2' component='h2' >The Store</Typography>
 
-class Store extends React.Component {
+      { CategoryLinks(newStoreData) }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      books: null
-    }
-  }
+      { newStoreData.map(renderCategory) }
+    </div>
+  );
+};
 
-  componentWillMount() {
-    const dataUrl = `${process.env.PUBLIC_URL}/data/store/store.json`
-
-
-    fetch(dataUrl, {
-      headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-     })
-    .then((response) => response.json() )
-    .then((data) => this.setState({ books: data }))
-  }
-
-
-  render() {
-
-    const imgUrl = (img) => `${process.env.PUBLIC_URL}/data/images/store/${img}`
-
-    if (!this.state.books)
-      return <Loading />
-
-    return (
-      <div id='Store'>
-        { this.state.books.map((book, idx) => <Book key={idx} {...book} img={imgUrl(book.img)}/>)}
-
-      </div>
-    )
-  }
-}
-
-export default Store
+export default Store;

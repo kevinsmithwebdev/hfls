@@ -4,15 +4,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TitleBar from './TitleBar/TitleBar';
-import './Header.css'
-
-const navArr = ['home', 'store', 'extra', 'about us', 'blog', 'contact'];
+import navArr from './routes';
+import './Header.css';
 
 const renderLink = (label, idx) => {
   let linkUrl = (label === 'home') ? '/' : label.replace(/\s/g, '');
   return (
     <Tab
-      key={ idx }
+      key={ label }
       label={ label }
       value={ idx }
       component={Link}
@@ -27,15 +26,17 @@ const Header = () => {
   const [ navIndex, changeNavIndex ] = useState(0);
   const handleChangeNavIndex = (event, index) => changeNavIndex(index);
   return (
-    <AppBar id='Header' title='My App' onChange={this.handleChange} >
+    <AppBar
+      id='Header'
+      title='My App '
+      onChange={ this.handleChange }
+    >
       <TitleBar />
       <Tabs
-        inkBarStyle={{background: 'pink'}}
-        value={ navIndex }
+        TabIndicatorProps={ { style: {backgroundColor: 'yellow' } } }
         onChange={ handleChangeNavIndex }
-        classes={{ root: 'tabsRoot', indicator: {
-          background: 'white',
-        } }}
+        value={ navIndex }
+        style={ { width: '1200px', margin: '0 auto' } }
       >
         { navArr.map(renderLink) }
       </Tabs>
