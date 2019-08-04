@@ -5,12 +5,31 @@ import Typography from '@material-ui/core/Typography';
 import Book from './Book/Book';
 import { getCardColor } from '../../../constants/colors';
 
-const imageStyle = { width: '150px',  height: 'auto', padding: '5px', borderRadius: '7px' };
+const imageStyle = { width: 'auto', height: 100, padding: '5px', borderRadius: '7px' };
 
-const renderBook = ({ name, price }, idx) => <Book key={ name } name={ name } price={ price } isFirst={ !idx } />;
+const imagesWrapperStyle = { width: 200, height: 'auto', display: 'flex', flex: 1, flexDirection: 'row',
+  flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' };
 
-const Category = ({ category: { name, imageMain, books, slug }, idx }) => {
-  const altTitle = `spread of books for ${name}`;
+const renderBook = (book, idx) => <Book { ...book } isFirst={ !idx } />;
+
+const renderImage = image => (
+  <img
+    key={ image }
+    src={ image }
+    style={ imageStyle }
+    alt={ image } // fix alt
+  />
+);
+
+const renderMainImages = (images) => (
+  <div style={ imagesWrapperStyle } >
+    {
+      images.map(renderImage)
+    }
+  </div>
+);
+
+const Category = ({ category: { name, imagesMain, books, slug }, idx }) => {
   return (
     <div id='Category'>
       <Card
@@ -18,11 +37,11 @@ const Category = ({ category: { name, imageMain, books, slug }, idx }) => {
         key={ slug }
         raised
         style={ {
-          display: 'flex', backgroundColor: getCardColor(idx), minHeight: '100px', margin: '20px 0',
+          display: 'flex', backgroundColor: getCardColor(idx), minHeight: '100px', margin: '20px 0', 
         } }
       >
         <CardContent>
-          <img src={ imageMain } style={ imageStyle } alt={ altTitle } />
+          { renderMainImages(imagesMain) }
         </CardContent>
         <CardContent style={ { flex: 1, margin: '0 10px' } }>
           <Typography gutterBottom variant="h3" component="h3">

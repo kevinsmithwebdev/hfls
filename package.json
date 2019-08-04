@@ -11,7 +11,7 @@
     "grade school",
     "elementary school"
   ],
-  "homepage": "http://kevinsmithwebdev.com/",
+  "homepage": "http://havefunlearningspanish.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/kevinsmithwebdev/hfls"
@@ -20,6 +20,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "@material-ui/styles": "^3.0.0-alpha.10",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.0.2",
@@ -37,6 +38,7 @@
   "scripts": {
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
+    "starter": "yarn watch-css && yarn start",
     "build": "npm run build-css && react-scripts build",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",

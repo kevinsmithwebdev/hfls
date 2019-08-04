@@ -1,1 +1,8 @@
-export default ['home', 'about us', 'store', 'extra', 'blog', 'contact'];
+export default [
+  'home',
+  'about us',
+  'store',
+  'extra',
+  'blog',
+  'contact'
+];

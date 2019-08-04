@@ -1,6 +1,6 @@
 import React from 'react'
 import './HeroImage.css'
-import imgTeaching from '../../../assets/images/teaching.jpg'; 
+import imgTeaching from '../../../assets/images/home/roxTeaching.jpg'; 
 
 const HeroImage = () => (
   <div id='HeroImage'>

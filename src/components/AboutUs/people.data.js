@@ -1,5 +1,5 @@
 
-import imgRoxana from '../../assets/images/aboutUs/roxana.jpg';
+import imgRoxana from '../../assets/images/aboutUs/rox.jpg';
 import imgAnna from '../../assets/images/aboutUs/anna.jpg';
 import imgMelanie from '../../assets/images/aboutUs/melanie.jpg';
 import imgRobert from '../../assets/images/aboutUs/robert.jpg';

@@ -8,22 +8,21 @@ import navArr from './routes';
 import './Header.css';
 
 const renderLink = (label, idx) => {
-  let linkUrl = (label === 'home') ? '/' : label.replace(/\s/g, '');
+  const linkUrl = (label === 'home') ? '/' : label.replace(/\s/g, '');
   return (
     <Tab
       key={ label }
       label={ label }
       value={ idx }
-      component={Link}
+      component={ Link }
       classes={ { root: 'tabRoot', selected: 'tabSelected' } }
       to={ linkUrl }
     />
-
   );
 };
 
 const Header = () => {
-  const [ navIndex, changeNavIndex ] = useState(0);
+  const [navIndex, changeNavIndex] = useState(0);
   const handleChangeNavIndex = (event, index) => changeNavIndex(index);
   return (
     <AppBar
@@ -33,10 +32,11 @@ const Header = () => {
     >
       <TitleBar />
       <Tabs
-        TabIndicatorProps={ { style: {backgroundColor: 'yellow' } } }
+        initialSelectedIndex={ 2 }
         onChange={ handleChangeNavIndex }
-        value={ navIndex }
         style={ { width: '1200px', margin: '0 auto' } }
+        TabIndicatorProps={ { style: { backgroundColor: 'yellow' } } }
+        value={ navIndex }
       >
         { navArr.map(renderLink) }
       </Tabs>

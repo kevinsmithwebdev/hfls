@@ -4,19 +4,15 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import { getCardColor } from '../../../constants/colors';
 
-const renderCategoryLink = ({ name, slug }, idx) => {
-	console.log("TCL: renderCategoryLink -> name", name)
-  
-  return (
-    <Button key={ slug } style={ { margin: '0 5px', backgroundColor: getCardColor(idx) } } variant='contained'>
-      <Link href={ `#${slug}` }>
-        <Typography variant='h6' style={ { textTransform: 'none' } }>
-          { name }
-        </Typography>
-      </Link>
-    </Button>
-  );
-};
+const renderCategoryLink = ({ name, slug }, idx) => (
+  <Button key={ slug } style={ { margin: '0 5px', backgroundColor: getCardColor(idx) } } variant='contained'>
+    <Link href={ `#${slug}` }>
+      <Typography variant='h6' style={ { textTransform: 'none' } }>
+        { name }
+      </Typography>
+    </Link>
+  </Button>
+);
 
 const CategoryLinks = storeData => {
   return (
