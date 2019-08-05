@@ -5,11 +5,11 @@ export default [
       {
         label: 'Flash Cards',
         // extraText: 'for helping your students',
-        url: '/data/extra/rox.pdf',
+        url: '/data/extra/GK - Flash Cards.pdf',
       },
       {
         label: 'Games and Activities',
-        url: '/data/extra/rox.pdf',
+        url: '/data/extra/GK - Games and Activities.pdf',
 
       },
     ],
@@ -20,11 +20,11 @@ export default [
       {
         label: 'Flash Cards',
         // extraText: 'for helping your students',
-        url: '/data/extra/rox.pdf',
+        url: '/data/extra/G1 - Flash Cards.pdf',
       },
       {
         label: 'Games and Activities',
-        url: '/data/extra/rox.pdf',
+        url: '/data/extra/G1 - Games and Activities.pdf',
 
       },
     ],
@@ -35,7 +35,7 @@ export default [
       {
         label: 'Flash Cards',
         // extraText: 'for helping your students',
-        url: '/data/extra/rox.pdf',
+        url: '/data/extra/G2 - Flash Cards.pdf',
       },
     ],
   },

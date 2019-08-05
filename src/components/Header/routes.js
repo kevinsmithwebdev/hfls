@@ -3,6 +3,6 @@ export default [
   'about us',
   'store',
   'extra',
-  'blog',
+  // 'blog',
   'contact'
 ];
