@@ -24,7 +24,7 @@ const Book = ({ name: bookName, price, isFirst, link }, categoryName) => {
           <Typography variant='h4' component="h4" align='right' style={ { display: 'inline-block', flex: 3, justifyContent: 'right', margin: '0 10px' } }>
             { formatMoney(price.toFixed(2)) }
           </Typography>
-          <Button variant="contained" color='primary' style={ { margin: '0 10px' } } href={ link } >
+          <Button target="_blank" variant="contained" color='primary' style={ { margin: '0 10px' } } href={ link } >
             Purchase
           </Button>
         </div>

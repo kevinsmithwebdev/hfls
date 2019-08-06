@@ -43,6 +43,7 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pub": "yarn build && rm -rf ~/dev/kevinsmithwebdev.github.io/* && mv build/* ~/dev/kevinsmithwebdev.github.io/ && cd ~/dev/kevinsmithwebdev.github.io/ && git add -A && git commit -m publishing && git push && cd ~/dev/hfls/client/"
   }
 }

@@ -18,8 +18,8 @@ export default [
     name: 'First Grade',
     imagesMain: [
       getBookImagePath(1, 'textbook'),
-      // getBookImagePath(1, 'workbook'),
       getBookImagePath(1, 'stories'),
+      getBookImagePath(1, 'literacy'),
     ],
     books: [
       {
@@ -32,6 +32,11 @@ export default [
         name: 'Reading Book',
         price: 20,
       },
+      {
+        link: 'https://www.amazon.com/dp/1726470105/ref=sr_1_2?qid=1565051587&refinements=p_27%3ANunez+Trabucco&s=books&sr=1-2&text=Nunez+Trabucco%2C+Roxana',
+        name: 'Literacy Book',
+        price: 14,
+      }
     ],
   },
   {
@@ -66,32 +71,17 @@ export default [
       },
     ],
   },
-  // {
-  //   name: 'Fourth Grade',
-  //   imageMain: `${process.env.PUBLIC_URL}/images/store/book-spread.png`,
-  //   books: [
-  //     {
-  //       name: 'Textbook',
-  //       price: 12.34,
-  //     },
-  //     {
-  //       name: 'Reading Book',
-  //       price: 9.45,
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: 'Fifth Grade',
-  //   imageMain: `${process.env.PUBLIC_URL}/images/store/book-spread.png`,
-  //   books: [
-  //     {
-  //       name: 'Textbook',
-  //       price: 12.34,
-  //     },
-  //     {
-  //       name: 'Reading Book',
-  //       price: 9.45,
-  //     },
-  //   ],
-  // },
+  {
+    name: 'Fourth Grade',
+    imagesMain: [
+      getBookImagePath(4, 'textbook'),
+    ],
+    books: [
+      {
+        link: 'https://www.amazon.com/dp/1087099137/ref=sr_1_1?qid=1565052309&refinements=p_27%3A+Roxana%5CcNunez+Trabucco&s=books&sr=1-1&text=Nunez+Trabucco%2C+Roxana',
+        name: 'Textbook',
+        price: 30,
+      },
+    ],
+  },
 ];
