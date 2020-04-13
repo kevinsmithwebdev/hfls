@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import CacheBuster from './CacheBuster/CacheBuster';
 
 import Home from './Home/Home';
 import Store from './Store/Store';
@@ -16,34 +17,44 @@ import Footer from './Footer/Footer';
 import './App.css'
 
 class App extends React.Component {
-  state = { login: { isLoggedIn: false, key: '' } };
+  state = { login: { isLoggedIn: false, key: null } };
 
   setLogin = login => this.setState({ login });
 
   render() {
     return (
-      <div className="main-wrapper">
-        <Header />
+      <CacheBuster>
+        {({ loading, isLatestVersion, refreshCacheAndReload }) => {
+          if (loading) return null;
+          if (!isLatestVersion) {
+            refreshCacheAndReload();
+          }
+          return (
+            <div className="main-wrapper">
+              <Header />
 
-        <div className='page'>
-          <Switch>
-            <Route exact path='/' component={ Home } />
-            <Route exact path='/store' component={ Store } />
-            <Route exact path='/blog' component={ Blog } />
-            <Route exact path='/extra' component={ Extra } />
-            <Route
-              exact
-              path='/stories'
-              render={(props) => <Stories {...props} login={ this.state.login } setLogin={ this.setLogin } />}
-            />
-            <Route exact path='/aboutus' component={ AboutUs } />
-            <Route exact path='/contact' component={ Contact } />
-            <Route exact path='*' component={NotFound} />
-          </Switch>
-        </div>
+              <div className='page'>
+                <Switch>
+                  <Route exact path='/' component={ Home } />
+                  <Route exact path='/store' component={ Store } />
+                  <Route exact path='/blog' component={ Blog } />
+                  <Route exact path='/extra' component={ Extra } />
+                  <Route
+                    exact
+                    path='/stories'
+                    render={(props) => <Stories {...props} login={ this.state.login } setLogin={ this.setLogin } />}
+                  />
+                  <Route exact path='/aboutus' component={ AboutUs } />
+                  <Route exact path='/contact' component={ Contact } />
+                  <Route exact path='*' component={NotFound} />
+                </Switch>
+              </div>
 
-        <Footer />
-      </div>
+              <Footer />
+            </div>
+          )
+        }}
+      </CacheBuster>
     );
   }
 }

@@ -1,30 +1,24 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-// import CardContent from '@material-ui/core/CardContent';
-// import Link from '@material-ui/core/Link';
-// import Typography from '@material-ui/core/Typography';
-// import './Contact.css';
-// import imgRoxana from '../../assets/images/aboutUs/rox.jpg';
-// import { emailRoxana } from '../../constants/constants';
+import Panels from './Panels/Panels';
+
 
 const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center', backgroundColor: '#f8f8f8', flexDirection: 'column' };
-// const imageStyle = { width: '150px', height: 'auto', padding: '5px', borderRadius: '7px' };
-
-const STORIES_ALL_API = 'http://localhost:8080/stories/all';
-
+// const STORIES_ALL_API = 'http://localhost:8080/stories/all';
+const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/stories/all';
 
 class Stories extends React.Component {
-  checkKey = key => {
-    console.log('here1', key);
+  state = { stories: null };
+
+  checkKey = key =>
     fetch(STORIES_ALL_API, { headers: { 'x-api-key': key } })
       .then(res => res.json())
       .then(data => {
-        console.log('here2', data);
         if (!data.error) {
           this.props.setLogin({ isLoggedIn: true, key });
+          this.setState({ stories: data });
         }
       });
-  }
 
   getKey = () => {
     const key = prompt('Please enter your key'); // NOSONAR
@@ -32,6 +26,7 @@ class Stories extends React.Component {
   }
 
   render() {
+    const { stories } = this.state;
     if (!this.props.login.isLoggedIn) {
       return (
         <div id='Stories'>
@@ -43,10 +38,17 @@ class Stories extends React.Component {
         </div>
       )
     }
+
+    if (!stories) {
+      return <h3>loading ...</h3>;
+    }
+
     return (
       <div id='Stories'>
         <Card style={ cardStyle }>
           <h1>My Stories</h1>
+          <h2>Beginner</h2>
+          <Panels stories={ stories.beginner } />
         </Card>
       </div>
     );
