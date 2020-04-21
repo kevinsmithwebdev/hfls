@@ -5,7 +5,7 @@ import Panels from './Panels/Panels';
 
 const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center', backgroundColor: '#f8f8f8', flexDirection: 'column' };
 
-console.log('env', process?.env?.NODE_ENV);
+console.log('env', process.env);
 // const STORIES_ALL_API = process.env.NODE_ENV
 //   ? 'http://localhost:8080/stories/all'
 //   : 'https://kswd-hfls.herokuapp.com/stories/all';
