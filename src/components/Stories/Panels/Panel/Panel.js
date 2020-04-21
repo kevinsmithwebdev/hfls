@@ -21,7 +21,7 @@ const Panel = props => {
         classes={ { root: { backgroundColor: 'red' } }}
         expandIcon={<ExpandMoreIcon /> }
       >
-        <div style={ { width: 100 } }>
+        <div style={ { width: 160, textAlign: 'center' } }>
           <img
             alt={ `story thumbnail - ${story.title}` }
             className='logo-image'

@@ -17,9 +17,11 @@ const renderLect = (lect, idx, readTime) => {
 const renderParagraph = ({ header, lects }, idx, readTime) => (
   <div className='paragraph' key={ idx }>
     <div className='Lectorem-paragraph-header'>
-      <div>
-        <img src={header.imagePath} alt='Logo' width='150px' />
-      </div>
+      { !!header.imagePath &&
+        <div>
+          <img src={header.imagePath} alt='Logo' width='150px' />
+        </div>
+      }
       { header.lects.map((lect, idx) => renderLect(lect, idx, readTime)) }
     </div>
     <div>

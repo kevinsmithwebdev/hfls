@@ -4,8 +4,10 @@ import Panels from './Panels/Panels';
 
 
 const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center', backgroundColor: '#f8f8f8', flexDirection: 'column' };
-// const STORIES_ALL_API = 'http://localhost:8080/stories/all';
-const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/stories/all';
+
+const STORIES_ALL_API = process.env.NODE_ENV
+  ? 'http://localhost:8080/stories/all'
+  : 'https://kswd-hfls.herokuapp.com/stories/all';
 
 class Stories extends React.Component {
   state = { stories: null };
