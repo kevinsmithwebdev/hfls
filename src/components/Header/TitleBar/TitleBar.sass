@@ -1,24 +1,23 @@
-@import '../../../assets/styles/colors.sass'
-@import '../../../assets/styles/constants.sass'
+@import '../../../constants/styleConstants.sass'
+
+$spacing: 10px
 
 #TitleBar
-  align-content: center
-  background: $BG-gradient
-  border-radius: $border-radius
-  color: $title-color1
-  color: $title-color2
+  align-items: center
+  align-self: center
+  background: $title-bar-bg
+  color: $title-bar-fg
   display: flex
-  display: flex
-  flex-direction: column
   font-family: "Times New Roman", Times, serif
-  font-size: 0 $title-base-size
   font-size: 150%
   font-style: italic
   height: $title-bar-height
   justify-content: center
-  justify-content: center
-  margin-bottom: $section-bumper-padding
-  margin-top: $section-bumper-padding
-  padding: 0 5px
-  text-align: center
-  width: '1200px'
+  width: 100%
+
+.logo-image
+  margin: 0 $spacing
+  height: $title-bar-height * 0.9
+
+.text
+  margin: 0 $spacing

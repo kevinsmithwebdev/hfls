@@ -1,9 +1,8 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Book from './Book/Book';
-import { getCardColor } from '../../../constants/colors';
+
+import './Category.css';
 
 const imageStyle = { width: 'auto', height: 100, padding: '5px', borderRadius: '7px' };
 
@@ -30,26 +29,22 @@ const renderMainImages = (images) => (
 );
 
 const Category = ({ category: { name, imagesMain, books, slug }, idx }) => {
+  const classString = `outer-wrapper outer-wrapper${idx % 2}`;
   return (
-    <div id='Category'>
-      <Card
-        id={ slug }
-        key={ slug }
-        raised
-        style={ {
-          display: 'flex', backgroundColor: getCardColor(idx), minHeight: '100px', margin: '20px 0', 
-        } }
-      >
-        <CardContent>
+    <div className={ classString }>
+      <div className='inner-wrapper category-wrapper'>
+        <div className='category-images-wrapper'>
           { renderMainImages(imagesMain) }
-        </CardContent>
-        <CardContent style={ { flex: 1, margin: '0 10px' } }>
+        </div>
+
+        <div className='category-table-wrapper'>
           <Typography gutterBottom variant="h3" component="h3">
             Books for { name }
           </Typography>
+
           { books.map(book => renderBook(book, name)) }
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 }

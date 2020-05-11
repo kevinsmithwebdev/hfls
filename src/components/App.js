@@ -17,9 +17,18 @@ import Footer from './Footer/Footer';
 import './App.css'
 
 class App extends React.Component {
-  state = { login: { isLoggedIn: false, key: null } };
+  state = {
+    login: {
+      isLoggedIn: false,
+      key: null,
+    },
+    stories: null,
+  };
 
   setLogin = login => this.setState({ login });
+
+  setStories = stories => this.setState({ stories });
+
 
   render() {
     return (
@@ -42,7 +51,13 @@ class App extends React.Component {
                   <Route
                     exact
                     path='/stories'
-                    render={(props) => <Stories {...props} login={ this.state.login } setLogin={ this.setLogin } />}
+                    render={ props => <Stories
+                      {...props}
+                      login={ this.state.login }
+                      setLogin={ this.setLogin }
+                      stories={ this.state.stories }
+                      setStories={ this.setStories }
+                    />}
                   />
                   <Route exact path='/aboutus' component={ AboutUs } />
                   <Route exact path='/contact' component={ Contact } />

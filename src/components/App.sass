@@ -1,16 +1,34 @@
-@import '../assets/styles/colors.sass'
-@import '../assets/styles/constants.sass'
+@import '../constants/styleConstants.sass'
 
 .main-wrapper
-  max-width: $body-max-width
-  margin: 0 auto
-  display: flex
-  min-height: 100vh
-  flex-direction: column
   align-self: center
-  padding-top: 128px
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  padding: 128px 0 0 0
+
 
 .page
+  flex: 1
 
 body
+  margin: 0
 
+// ***
+
+.outer-wrapper
+  display: flex
+  justify-content: center
+  padding: 5px
+  width: 100%
+
+.outer-wrapper0
+  background-color: $boring-gray
+
+.outer-wrapper1
+  background-color: $white1
+
+.inner-wrapper
+  align-self: center
+  text-align: left
+  width: $body-max-width

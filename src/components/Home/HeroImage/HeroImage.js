@@ -1,6 +1,6 @@
 import React from 'react'
 import './HeroImage.css'
-import imgTeaching from '../../../assets/images/home/roxTeaching.jpg'; 
+const imgTeaching = 'https://kswd-hfls-site.s3-us-west-1.amazonaws.com/images/home/roxTeaching.jpg';
 
 const HeroImage = () => (
   <div id='HeroImage'>

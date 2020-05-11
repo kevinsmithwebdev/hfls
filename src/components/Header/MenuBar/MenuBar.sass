@@ -1,0 +1,23 @@
+@import './../../../constants/styleConstants.sass';
+
+#MenuBar
+  background-color: $menu-bar-bg
+
+.tabsRoot
+  color: $title-bar-fg
+  background: $title-bar-bg
+
+.tabsIndicator
+  background: yellow
+
+.tabRoot
+  text-transform: 'initial'
+  min-width: 54
+  font-weight: bold
+  &:hover
+    color: yellow
+    opacity: 1
+  &$tabSelected
+    color: yellow
+  &:focus
+    color: yellow

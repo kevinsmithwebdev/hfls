@@ -1,3 +1,6 @@
+const extraRootUrl = 'https://kswd-hfls-site.s3-us-west-1.amazonaws.com/extras/downloads/';
+
+
 export default [
   {
     grade: 'Kindergarten',
@@ -5,11 +8,11 @@ export default [
       {
         label: 'Flash Cards',
         // extraText: 'for helping your students',
-        url: '/data/extra/GK - Flash Cards.pdf',
+        url: extraRootUrl + 'GK - Flash Cards.pdf',
       },
       {
         label: 'Games and Activities',
-        url: '/data/extra/GK - Games and Activities.pdf',
+        url: extraRootUrl + 'GK - Games and Activities.pdf',
 
       },
     ],
@@ -20,11 +23,11 @@ export default [
       {
         label: 'Flash Cards',
         // extraText: 'for helping your students',
-        url: '/data/extra/G1 - Flash Cards.pdf',
+        url: extraRootUrl + 'G1 - Flash Cards.pdf',
       },
       {
         label: 'Games and Activities',
-        url: '/data/extra/G1 - Games and Activities.pdf',
+        url: extraRootUrl + 'G1 - Games and Activities.pdf',
 
       },
     ],
@@ -35,7 +38,7 @@ export default [
       {
         label: 'Flash Cards',
         // extraText: 'for helping your students',
-        url: '/data/extra/G2 - Flash Cards.pdf',
+        url: extraRootUrl + 'G2 - Flash Cards.pdf',
       },
     ],
   },

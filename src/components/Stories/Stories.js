@@ -2,26 +2,19 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import Panels from './Panels/Panels';
 
-
 const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center', backgroundColor: '#f8f8f8', flexDirection: 'column' };
-
-console.log('env', process.env);
-// const STORIES_ALL_API = process.env.NODE_ENV
-//   ? 'http://localhost:8080/stories/all'
-//   : 'https://kswd-hfls.herokuapp.com/stories/all';
 
 const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/stories/all';
 
 class Stories extends React.Component {
-  state = { stories: null };
-
+  // state = { stories: null };
   checkKey = key =>
     fetch(STORIES_ALL_API, { headers: { 'x-api-key': key } })
       .then(res => res.json())
       .then(data => {
         if (!data.error) {
           this.props.setLogin({ isLoggedIn: true, key });
-          this.setState({ stories: data });
+          this.props.setStories(data);
         }
       });
 
@@ -31,7 +24,7 @@ class Stories extends React.Component {
   }
 
   render() {
-    const { stories } = this.state;
+    const { stories } = this.props;
     if (!this.props.login.isLoggedIn) {
       return (
         <div id='Stories'>

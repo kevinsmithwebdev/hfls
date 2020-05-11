@@ -18,7 +18,7 @@ const Book = ({ name: bookName, price, isFirst, link }, categoryName) => {
           {/* <Button variant="contained" color='secondary' style={ { margin: '0 10px' } }>
             View
           </Button> */}
-          <Typography variant='h4' component="h4" style={ { display: 'inline-block', flex: 10, margin: '0 10px' } }>
+          <Typography variant='h4' component="h4" style={ { display: 'inline-block', flex: 10, margin: '0 10px', textAlign: 'left' } }>
             { bookName }
           </Typography>
           <Typography variant='h4' component="h4" align='right' style={ { display: 'inline-block', flex: 3, justifyContent: 'right', margin: '0 10px' } }>

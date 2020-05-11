@@ -1,4 +1,4 @@
-const getBookImagePath = (grade, type) => `${process.env.PUBLIC_URL}/images/store/grade-${grade}-${type}.jpg`;
+const getBookImagePath = (grade, type) => `https://kswd-hfls-site.s3-us-west-1.amazonaws.com/images/store/grade-${grade}-${type}.jpg`;
 
 export default [
   {
@@ -42,7 +42,7 @@ export default [
   {
     name: 'Second Grade',
     imagesMain: [
-      getBookImagePath(2, 'textbook'),      
+      getBookImagePath(2, 'textbook'),
     ],
     books: [
       {

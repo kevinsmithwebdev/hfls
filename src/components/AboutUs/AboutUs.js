@@ -1,25 +1,21 @@
 import React, { Fragment } from 'react'
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import people from './people.data';
-import './AboutUs.css';
 
 import './AboutUs.css';
 
-const cardColors = [
-  '#ffd1b3',
-  '#c0d6ff',
-  '#c4ffc4',
-  '#ffc6ff',
-];
+// const cardColors = [
+//   '#ffd1b3',
+//   '#c0d6ff',
+//   '#c4ffc4',
+//   '#ffc6ff',
+// ];
 
-const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center' };
-const imageStyle = { width: '150px', height: 'auto', padding: '5px', borderRadius: '7px' };
+// const cardStyle = { display: 'flex', alignItems: 'center' };
 
-const getCardFlexDirection = idx => idx % 2 ? 'row-reverse' : 'row';
-const getCardBackgroundColor = idx => cardColors[idx % cardColors.length];
+// const getCardFlexDirection = idx => idx % 2 ? 'row-reverse' : 'row';
+// const getCardBackgroundColor = idx => cardColors[idx % cardColors.length];
 
 const renderTitle = (name, title) => (
   <Fragment>
@@ -33,26 +29,38 @@ const renderTitle = (name, title) => (
 );
 
 const renderPara = (para, i) => (
-  <Typography key={ i } paragraph={ i !== para.length - 1 } component="p">
+  <Typography align='left' key={ i } paragraph={ i !== para.length - 1 } component="p">
     { para }
   </Typography>
 );
 
 // TODO: CardMedia?
-const renderPersonCard = ({ image, name, title, text, link }, idx) => (
-  <Card key={ name } style={ { ...cardStyle, flexDirection: getCardFlexDirection(idx), backgroundColor: getCardBackgroundColor(idx) } }>
-    <img src={ image } style={ imageStyle } alt={ title } />
-    <CardContent>
-      { renderTitle(name, title) }
-      { text.map(renderPara) }
-      { !!link &&
-        <Link href={ link }>
-          See more of her work.
-        </Link>
-      }
-    </CardContent>
-  </Card>
-);
+const renderPersonCard = ({ image, name, title, text, link }, idx) => {
+  const imageStyle = {
+    width: '150px',
+    height: 'auto',
+    // height: idx === 0 ? '200px' : '180px',
+    padding: '5px',
+    borderRadius: '7px',
+  };
+  const className = `outer-wrapper outer-wrapper${idx % 2}`;
+  return (
+    <div key={ name } className={ className }>
+      <div className='inner-wrapper person-wrapper'>
+        <img src={ image } style={ imageStyle } alt={ title } />
+        <div>
+          { renderTitle(name, title) }
+          { text.map(renderPara) }
+          { !!link &&
+            <Link href={ link }>
+              See more of her work.
+            </Link>
+          }
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const AboutUs = () => (
   <div id='AboutUs'>
