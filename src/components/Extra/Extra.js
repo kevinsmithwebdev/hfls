@@ -41,7 +41,7 @@ class Extra extends PureComponent {
 
   renderGradeSupplements = ({ items, grade }) => (
     <CardContent key={ grade }>
-      <Typography variant='display1' component='h3'>{ grade }</Typography>
+      <Typography variant='h4' component='h4'>{ grade }</Typography>
       <List>
         { items.map(list => this.renderSupplementList(list, grade)) }
       </List>
@@ -52,7 +52,7 @@ class Extra extends PureComponent {
     return (
       <div id='Extra'>
         <Card style={ { backgroundColor: 'white', padding: '20px' } }>
-          <Typography variant='display2' component='h2'>Here is some materials to supplement the curriculum:</Typography>
+          <Typography variant='h3' component='h3'>Here are some materials to supplement the curriculum:</Typography>
           { supplementalMaterials.map(grade => this.renderGradeSupplements(grade)) }
         </Card>
       </div>

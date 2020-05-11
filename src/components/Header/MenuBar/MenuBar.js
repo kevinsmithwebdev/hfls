@@ -27,7 +27,6 @@ const MenuBar = () => {
   return (
     <div id='MenuBar'>
       <Tabs
-        initialSelectedIndex={ 2 }
         onChange={ handleChangeNavIndex }
         style={ { width: '1200px', margin: '0 auto' } }
         TabIndicatorProps={ { style: { backgroundColor: 'yellow' } } }
