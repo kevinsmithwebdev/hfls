@@ -10,6 +10,10 @@ const renderPanel = (story, idx, currentStoryIndex, setCurrentStoryIndex) => (
 const Panels = ({ stories }) => {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(null);
 
+  if (!stories) {
+    return null;
+  }
+
   return (
     <div>
       { stories.map((story, idx) => renderPanel(story, idx, currentStoryIndex, setCurrentStoryIndex)) }

@@ -9,7 +9,7 @@ const imageStyle = { width: 'auto', height: 100, padding: '5px', borderRadius: '
 const imagesWrapperStyle = { width: 200, height: 'auto', display: 'flex', flex: 1, flexDirection: 'row',
   flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' };
 
-const renderBook = (book, idx) => <Book { ...book } isFirst={ !idx } />;
+const renderBook = (book, idx) => <Book key={ book.name } { ...book } isFirst={ !idx } />;
 
 const renderImage = image => (
   <img
@@ -38,10 +38,9 @@ const Category = ({ category: { name, imagesMain, books, slug }, idx }) => {
         </div>
 
         <div className='category-table-wrapper'>
-          <Typography gutterBottom variant="h3" component="h3">
+          <h3 className='category-label'>
             Books for { name }
-          </Typography>
-
+          </h3>
           { books.map(book => renderBook(book, name)) }
         </div>
       </div>

@@ -2,8 +2,9 @@ export default [
   'home',
   'about us',
   'store',
-  'stories',
-  'extra',
+  'lessons',
+  'for students',
+  'for teachers',
   // 'blog',
   'contact'
 ];

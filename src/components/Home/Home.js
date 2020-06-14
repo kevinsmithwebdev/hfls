@@ -11,15 +11,6 @@ const Home = () => (
       </div>
     </div>
 
-    <div className='outer-wrapper outer-wrapper1'>
-      <div className='inner-wrapper text-column'>
-        <h2>This program is for you if…</h2>
-        <ul>
-          <li>You teach Spanish in elementary schools, not in a daily basis.</li>
-          <li>You are a private tutor or teach Spanish in after school programs.</li>
-        </ul>
-      </div>
-    </div>
     <FrontCards/>
   </div>
 );

@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { selectLessonsToggle } from '../../../redux/reducers/toggles/selectors';
 
-import routes from './routes';
+import rawRoutes from './routes';
 
 import './MenuBar.css';
 
+const mapStateToProps = state => {
+  const lessonsToggle = selectLessonsToggle(state);
+  const routes = lessonsToggle
+    ? rawRoutes
+    : rawRoutes.filter(r => r.toLowerCase() !== 'lessons')
+  return {
+    routes,
+  }
+};
+
 const renderLink = (label, idx) => {
-  const linkUrl = (label === 'home') ? '/' : label.replace(/\s/g, '');
+  const linkUrl = (label === 'home') ? '/' : label.replace(/\s/g, '-');
   return (
     <Tab
       key={ label }
@@ -21,7 +33,7 @@ const renderLink = (label, idx) => {
   );
 };
 
-const MenuBar = () => {
+const MenuBar = props => {
   const [navIndex, changeNavIndex] = useState(0);
   const handleChangeNavIndex = (event, index) => changeNavIndex(index);
   return (
@@ -32,10 +44,10 @@ const MenuBar = () => {
         TabIndicatorProps={ { style: { backgroundColor: 'yellow' } } }
         value={ navIndex }
       >
-        { routes.map(renderLink) }
+        { props.routes.map(renderLink) }
       </Tabs>
     </div>
   );
 };
 
-export default MenuBar;
+export default connect(mapStateToProps)(MenuBar);
