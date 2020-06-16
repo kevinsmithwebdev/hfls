@@ -8,7 +8,7 @@ export const SELECT_LEVEL= `${NAME_SPACE}/SELECT`;
 export const selectLevelAC = level => ({ type: SELECT_LEVEL, payload: { level } });
 
 const initialState = {
-  selected: 'beginner',
+  selected: 'kinder',
 };
 
 export default (state = initialState, { type, payload }) => {

@@ -14,8 +14,8 @@ const mapDispatchToPros = {
 const levels = [
   'Kinder',
   'Beginner',
-  'Intermediate',
-  'Advanced',
+  // 'Intermediate',
+  // 'Advanced',
 ];
 
 const renderLevelButton = (level, selectedLevel, dispatchChangeSelectedLevel) => {

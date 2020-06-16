@@ -10,11 +10,7 @@ function* storiesSaga() {
 function* storiesSagaWorker() {
   yield put(StoriesAction.START());
 
-  const username = yield select(state => {
-    console.log('asdf state', state);
-    return state.user.username;
-  });
-  console.log('asdf username', username);
+  const username = yield select(state => state.user.username);
 
   try {
     const data = yield call(getStoriesService, username);

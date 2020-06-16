@@ -20,12 +20,9 @@ const mapDispatchToProps = {
 
 const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center', backgroundColor: '#f8f8f8', flexDirection: 'column' };
 
-const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/stories/all';
+// const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/stories/all';
 
-const login = (key, dispatchLogInSaga) => {
-  console.log('asdf2', key);
-  dispatchLogInSaga(key);
-};
+const login = (key, dispatchLogInSaga) => dispatchLogInSaga(key);
 
 const getKey = dispatchLogInSaga => {
   const key = prompt('Please enter your key'); // NOSONAR
@@ -34,38 +31,14 @@ const getKey = dispatchLogInSaga => {
 
 
 export const Stories = props => {
-  // // state = { stories: null };
-  // // checkKey = (key, password) =>
-  // //   fetch(STORIES_ALL_API, { headers: { 'x-api-key': key } })
-  // //     .then(res => res.json())
-  // //     .then(data => {
-  // //       if (!data.error) {
-  // //         this.props.setLogin({ isLoggedIn: true, key });
-  // //         this.props.setStories(data);
-  // //         this.props.dispatchLogIn({ username: key, password });
-  // //       }
-  // //     });
-  // login = (key) => {
-  //   console.log('asdf2', key);
-  //   this.props.dispatchLogInSaga(key);
-  // };
-
-  // getKey = () => {
-  //   const key = prompt('Please enter your key'); // NOSONAR
-  //   this.login(key);
-  // };
-
   const { stories, isWaiting, isLoggedIn, dispatchLogInSaga, dispatchGetStories } = props;
 
   useEffect(() => {
-    console.log('asdf useEffect', isLoggedIn);
     if (isLoggedIn) {
       dispatchGetStories();
     }
   }, [isLoggedIn]);
 
-  console.log('asdf1', stories);
-  console.log('asdf2', isLoggedIn);
   if (!isLoggedIn) {
     return (
       <div id='Stories'>
@@ -81,7 +54,7 @@ export const Stories = props => {
   if (isWaiting) {
     return <h3>loading ...</h3>;
   }
-  console.log('asdf stories', stories);
+
   if (!stories) {
     return null;
   }

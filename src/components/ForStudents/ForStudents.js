@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LevelSelector from '../../common/LevelSelector/LevelSelector';
 import Stories from './Stories/Stories';
+import KinderLevel from './KinderLevel/KinderLevel';
 
 const mapStateToProps = state => {
   return {
@@ -12,6 +13,8 @@ const mapStateToProps = state => {
 
 const getComponent = (selectedLevel) => {
   switch (selectedLevel) {
+    case 'kinder':
+      return <KinderLevel />;
     case 'beginner':
       return <Stories />;
     default:

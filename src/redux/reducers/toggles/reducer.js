@@ -7,11 +7,7 @@ const NAME_SPACE = 'TOGGLES'
 
 export const TogglesType = createReqestTypes(NAME_SPACE);
 export const TogglesAction = createReqestActionCreators(NAME_SPACE);
-// reducer
 
-const initialState = {
-  lessons: false,
-  login: false,
-};
+// reducer
 
 export default createReqestReducer(TogglesType);

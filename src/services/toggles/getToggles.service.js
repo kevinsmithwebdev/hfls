@@ -1,4 +1,6 @@
+import urls from '../../constants/urls';
+
 export default () => {
-  return fetch('http://localhost:8080/toggles/all')
-    .then(res => res.json());
+  const url = urls.TOGGLES_ALL;
+  return fetch(url).then(res => res.json());
 };

@@ -3,16 +3,14 @@ import React, { useEffect } from 'react';
 import Category from './Category/Category';
 import { toTrainCase } from '../../utilities/casing';
 import './Store.css';
+import urls from '../../constants/urls';
 
 const renderCategory = (c, idx) => <Category category={ c } key={ c.slug } idx={ idx } />;
-
-// const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/store/all';
-const STORE_DATA_API = 'http://localhost:8080/store/all';
 
 const Store = ({ storeData, setStoreData }) => {
   useEffect(() => {
     if (!storeData) {
-      fetch(STORE_DATA_API)
+      fetch(urls.STORE_ALL)
         .then(res => {
           return res.json();
         })
