@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import './Phonic.css';
 
-const renderWord = (syllable, isHighlighted, isFirst) => {
-  console.log('asdf3', syllable, isHighlighted, isFirst);
+const renderWord = (syllable, isHighlighted, idx) => {
+  const isFirst = idx === 0;
   return (
-    <Fragment>
-      { !isFirst && <span className='bold'> · </span> }
-      <span className={ isHighlighted ? 'syllable highlighted' : 'syllable' }>
+    <Fragment key={ `phonic-wrapper-${idx}` }>
+      { !isFirst && <span className='bold' > · </span> }
+      <span className={ isFirst ? 'syllable highlighted' : 'syllable' } >
         { syllable }
       </span>
     </Fragment>
@@ -15,11 +15,10 @@ const renderWord = (syllable, isHighlighted, isFirst) => {
 
 const Phonic = props => {
   const { phonic: { syllables, highlights } } = props;
-  console.log('asdf2', syllables);
   return (
     <div className='Phonic'>
       <span className='syllable bold'>/ </span>
-      { syllables.map((syllable, idx) => renderWord(syllable, highlights.includes(idx), idx === 0)) }
+      { syllables.map((syllable, idx) => renderWord(syllable, highlights.includes(idx), idx)) }
       <span className='syllable bold'> /</span>
     </div>
   );

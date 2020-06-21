@@ -3,28 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 import Phonic from './Phonic/Phonic';
 import './Vocales.css';
-
-const prefix = 'https://kswd-hfls-site.s3-us-west-1.amazonaws.com/forStudents/kinder/vocales/';
-
-const vowels = [
-  { letter: 'a', word: 'abeja', phonic: { syllables: ['ah', 'BAY', 'hah'], highlights: [1] } },
-  { letter: 'e', word: 'elefante', phonic: { syllables: ['ay', 'ley', 'FAHN', 'tey'], highlights: [0, 1, 3] } },
-  { letter: 'i', word: 'iguana', phonic: { syllables: ['ee', 'GWAH', 'nah'], highlights: [0] } },
-  { letter: 'o', word: 'oso', phonic: { syllables: ['O', 'so'], highlights: [0, 1] } },
-  { letter: 'u', word: 'unicornio', phonic: { syllables: ['oo', 'nee', 'COR', 'nyo'], highlights: [0] } },
-];
-
-const vocales = vowels.map(({ letter, word, phonic }) => ({
-    letter,
-    letterSoundUrl: `${prefix}${letter}.mp3`,
-    letterImageUrl: `${prefix}${letter}.png`,
-    phonic,
-    wordSoundUrl: `${prefix}${word}.mp3`,
-    wordImageUrl: `${prefix}${word}.png`,
-}));
+import { vocales } from '../kinderData';
 
 const Vocal = ({ vocal: { letter, letterImageUrl, letterSoundUrl, wordSoundUrl, wordImageUrl, phonic }, idx }) => {
-  console.log('asdf', phonic);
   const title = `Letra - ${letter.toUpperCase()} / ${letter.toLowerCase()}`;
   const letterAudio = new Audio(letterSoundUrl);
   const wordAudio = new Audio(wordSoundUrl);
