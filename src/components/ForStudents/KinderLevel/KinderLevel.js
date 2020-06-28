@@ -1,13 +1,13 @@
 import React from 'react';
 import Vocales from './Vocales/Vocales';
-import VowelQuiz from './VowelQuiz/VowelQuiz';
+import VowelGame from './VowelGame/VowelGame';
 import './KinderLevel.css';
 
 const KinderLevel = () => {
   return (
     <div className='KinderLevel'>
       <Vocales />
-      <VowelQuiz />
+      <VowelGame />
     </div>
   );
 };

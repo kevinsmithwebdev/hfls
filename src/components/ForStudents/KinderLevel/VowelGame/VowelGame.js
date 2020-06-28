@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Quiz from '../../../../common/Quiz/Quiz';
 import { vowelQuizData } from '../kinderData';
-import './VowelQuiz.css';
+import './VowelGame.css';
 
 const getRandomCurrent = () => Math.floor(Math.random() * vowelQuizData.choices.length);
 
@@ -11,7 +11,7 @@ const VowelQuiz = () => {
   const [answerIndex, setAnswerIndex] = useState(getRandomCurrent());
   return (
     <div className='VowelQuiz'>
-      <h2>Vowel Quiz</h2>
+      <h2>Vowel Game</h2>
       <Quiz
         resetAnswer={ () => setNewAnswerIndex(setAnswerIndex) }
         data={ vowelQuizData }

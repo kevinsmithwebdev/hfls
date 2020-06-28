@@ -13,6 +13,7 @@ const renderButton = ({ label }, idx, setCurrentGuessIndex, currentGuessIndex, i
 
   return (
     <button
+      key={ label }
       className={ buttonClass }
       disabled={ disabled }
       onClick={ () => setCurrentGuessIndex(idx) }
