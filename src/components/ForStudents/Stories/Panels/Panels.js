@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Panel from './Panel/Panel';
 
 const renderPanel = (story, idx, currentStoryIndex, setCurrentStoryIndex) => (
-  <div style={ { margin: '15px 0' } }>
+  <div key={ idx } style={ { margin: '15px 0' } }>
     <Panel story={ story } currentStoryIndex={ currentStoryIndex } idx={ idx } setCurrentStoryIndex={ setCurrentStoryIndex } />
   </div>
 );

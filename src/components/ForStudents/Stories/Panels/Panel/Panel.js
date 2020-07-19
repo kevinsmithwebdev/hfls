@@ -1,23 +1,22 @@
 import React from 'react';
-import Lector from '../../../../../packages/Lector/Lector';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import Lectorem from 'react-lectorem';
+import { Accordion, AccordionDetails, AccordionSummary } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
 
-const renderStory = story => (
-  <Lector data={ story } />
+const renderStory = (story, idx) => (
+  <Lectorem key={ idx } data={ story } />
 );
 
 const Panel = props => {
   const { story, idx, currentStoryIndex, setCurrentStoryIndex } = props;
+
   return (
-    <ExpansionPanel
+    <Accordion
       expanded={ currentStoryIndex === idx }
       onChange={ () => setCurrentStoryIndex(currentStoryIndex === idx ? null : idx) }
     >
-      <ExpansionPanelSummary
+      <AccordionSummary
         classes={ { root: { backgroundColor: 'red' } }}
         expandIcon={<ExpandMoreIcon /> }
       >
@@ -43,11 +42,11 @@ const Panel = props => {
             { story.subtitle }
           </Typography>
         </div>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        { renderStory(story) }
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+      </AccordionSummary>
+      <AccordionDetails>
+        { renderStory(story, idx) }
+      </AccordionDetails>
+    </Accordion>
   );
 };
 

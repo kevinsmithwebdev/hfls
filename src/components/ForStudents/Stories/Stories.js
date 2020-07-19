@@ -20,8 +20,6 @@ const mapDispatchToProps = {
 
 const cardStyle = { display: 'flex', margin: '10px', alignItems: 'center', backgroundColor: '#f8f8f8', flexDirection: 'column' };
 
-// const STORIES_ALL_API = 'https://kswd-hfls.herokuapp.com/stories/all';
-
 const login = (key, dispatchLogInSaga) => dispatchLogInSaga(key);
 
 const getKey = dispatchLogInSaga => {
