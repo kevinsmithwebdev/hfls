@@ -14,6 +14,7 @@ import AboutUs from './AboutUs/AboutUs';
 import Contact from './Contact/Contact';
 import NotFound from './NotFound/NotFound';
 import ForStudents from './ForStudents/ForStudents';
+import ThornhillSpanish from './ThornhillSpanish/ThorhnillSpanish';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -70,6 +71,7 @@ class App extends React.Component {
                   />
                   <Route exact path='/lessons' component={ Lessons } />
                   <Route exact path='/blog' component={ Blog } />
+                  <Route exact path='/thornhill-spanish' component={ ThornhillSpanish } />
                   {/* <Route
                     exact
                     path='/stories'

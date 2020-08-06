@@ -45,7 +45,7 @@
   },
   "scripts": {
     "build:css": "node-sass-chokidar src/ -o src/",
-    "build": "npm run build:css && react-scripts build",
+    "build": "rm -rf build && npm run build:css && react-scripts build",
     "clear": "rm -rf node_modules && rm -f package-lock.json",
     "eject": "react-scripts eject",
     "generate-build-version": "node generate-build-version",
