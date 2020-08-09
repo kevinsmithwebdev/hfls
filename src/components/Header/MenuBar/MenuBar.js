@@ -27,6 +27,7 @@ const renderLink = (label, idx) => {
       label={ label }
       value={ idx }
       component={ Link }
+      style={{ minWidth: 120 }}
       classes={ { root: 'tabRoot', selected: 'tabSelected' } }
       to={ linkUrl }
     />
@@ -39,6 +40,7 @@ const MenuBar = props => {
   return (
     <div id='MenuBar'>
       <Tabs
+        tabItemContainerStyle={{width: '60px'}}
         onChange={ handleChangeNavIndex }
         style={ { width: '1200px', margin: '0 auto' } }
         TabIndicatorProps={ { style: { backgroundColor: 'yellow' } } }

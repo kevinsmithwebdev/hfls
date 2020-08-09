@@ -78,8 +78,8 @@ const ThorhhillSpanish = () => {
         <tr>
           <td>Kinder</td>
           <td>$800</td>
-          <td>Tue & Thu afternoon<br/>exact time to be determined</td>
-          <td>Tue & Thu 2:20-2:30</td>
+          <td>Tue & Thu 2:30-3</td>
+          <td>Tue & Thu 2:20-3</td>
           <td>1</td>
         </tr>
         <tr>
