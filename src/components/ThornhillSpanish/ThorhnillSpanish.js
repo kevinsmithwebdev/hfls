@@ -4,12 +4,14 @@ import './ThornhillSpanish.css';
 
 const FormDownload = () => (
   <div className='formDownload'>
-    <div style={ { textAlign: 'center', padding: '5px' } }>
+    <div style={ { padding: '5px 0' }}>
       <span className='linksLabel'>Download a Registration Form:</span>
       <a className='link' href='https://kswd-hfls-site.s3-us-west-1.amazonaws.com/regestration/registration.pdf' download>PDF</a>
       <a className='link' href='https://kswd-hfls-site.s3-us-west-1.amazonaws.com/regestration/registration.docx' download>Word</a>
     </div>
-    <span style={ { textAlign: 'center', padding: '5px' } }>Email completed form to thorhillspanish@yahoo.com</span>
+    <div className='linksLabel'>Email completed form to thornhillspanish@yahoo.com</div>
+    <div className='linksLabel'><b>Enrollment</b> starts 8/10/20 and ends 8/28/20.</div>
+    <div className='linksLabel'><b>Classes start</b> the first week of September and run until the second week of May.</div>
   </div>
 )
 
@@ -76,14 +78,14 @@ const ThorhhillSpanish = () => {
         <tr>
           <td>Kinder</td>
           <td>$800</td>
-          <td>Tue & Thu 2-2:30</td>
+          <td>Tue & Thu afternoon<br/>exact time to be determined</td>
           <td>Tue & Thu 2:20-2:30</td>
           <td>1</td>
         </tr>
         <tr>
           <td>Beginner</td>
           <td>$800</td>
-          <td>Mon 3:30-4 & Wed 2-2:30</td>
+          <td>Mon & Wed afternoon<br/>exact time to be determined</td>
           <td>Mon 3-4 & Wed 1:30-2:30</td>
           <td>3</td>
         </tr>
@@ -102,6 +104,7 @@ const ThorhhillSpanish = () => {
           <td>2</td>
         </tr>
       </table>
+
       <div style={ { padding: '20px 0 10px 0' } }>
         <FormDownload />
       </div>

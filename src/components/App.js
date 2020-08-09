@@ -71,7 +71,7 @@ class App extends React.Component {
                   />
                   <Route exact path='/lessons' component={ Lessons } />
                   <Route exact path='/blog' component={ Blog } />
-                  <Route exact path='/thornhill-spanish' component={ ThornhillSpanish } />
+                  <Route exact path='/thornhill' component={ ThornhillSpanish } />
                   {/* <Route
                     exact
                     path='/stories'

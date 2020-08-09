@@ -1,6 +1,6 @@
 export default [
   'home',
-  'thornhill spanish',
+  'thornhill',
   'about us',
   'store',
   'lessons',
